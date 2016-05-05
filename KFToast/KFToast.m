@@ -16,6 +16,12 @@
 #define kToastProgressMargin 5.0
 
 #define kToastShowDefaultDuration 1.0
+#define YSFIsLandscape   (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]))
+
+#define YSFIOS8            ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 8.0)
+
+#define YSFUIScreenWidth    ((YSFIOS8 || !YSFIsLandscape) ?[UIScreen mainScreen].bounds.size.width:[UIScreen mainScreen].bounds.size.height)
+#define YSFUIScreenHeight   ((YSFIOS8 || !YSFIsLandscape) ?[UIScreen mainScreen].bounds.size.height:[UIScreen mainScreen].bounds.size.width)
 
 @interface KFToast()
 
