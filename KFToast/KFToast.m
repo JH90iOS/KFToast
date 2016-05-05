@@ -20,8 +20,8 @@
 
 #define YSFIOS8            ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 8.0)
 
-#define YSFUIScreenWidth    ((YSFIOS8 || !YSFIsLandscape) ?[UIScreen mainScreen].bounds.size.width:[UIScreen mainScreen].bounds.size.height)
-#define YSFUIScreenHeight   ((YSFIOS8 || !YSFIsLandscape) ?[UIScreen mainScreen].bounds.size.height:[UIScreen mainScreen].bounds.size.width)
+#define UIScreenWidth    ((YSFIOS8 || !YSFIsLandscape) ?[UIScreen mainScreen].bounds.size.width:[UIScreen mainScreen].bounds.size.height)
+#define UIScreenHeight   ((YSFIOS8 || !YSFIsLandscape) ?[UIScreen mainScreen].bounds.size.height:[UIScreen mainScreen].bounds.size.width)
 
 @interface KFToast()
 
@@ -70,8 +70,8 @@
     titleLabel.frame = CGRectMake(0, 0, labelWidth, kToastTextHeight);
     
     //超过屏幕
-    if (labelWidth + kToastMarginRight * 2 > YSFUIScreenWidth) {
-        labelWidth = YSFUIScreenWidth - kToastMarginRight*2 - 50;
+    if (labelWidth + kToastMarginRight * 2 > UIScreenWidth) {
+        labelWidth = UIScreenWidth - kToastMarginRight*2 - 50;
     }
     
     textToastView.frame = CGRectMake(0, 0, labelWidth + kToastMarginRight*2, kToastTextHeight+kToastMarginTop*2);
@@ -160,9 +160,9 @@
     CGFloat labelWidth = [toast getSuitableRectWidthOfLabel:titleLabel];
     
     //超过屏幕
-    if (labelWidth + kToastMarginRight * 2 + indicatorView.frame.size.width > YSFUIScreenWidth)
+    if (labelWidth + kToastMarginRight * 2 + indicatorView.frame.size.width > UIScreenWidth)
     {
-        labelWidth = YSFUIScreenWidth - kToastMarginRight*2 - indicatorView.frame.size.width - 50;
+        labelWidth = UIScreenWidth - kToastMarginRight*2 - indicatorView.frame.size.width - 50;
     }
     titleLabel.frame = CGRectMake(0, 0, labelWidth, kToastTextHeight);
 
