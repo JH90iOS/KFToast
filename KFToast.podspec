@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.summary  = 'This is a toast view used on iOS'
   s.homepage = 'https://github.com/jh981479486/KFToast'
   s.author   = { 'jinhua' => 'jinhua9093@gamil.com' }
-  s.source   = { :git => 'https://github.com/jh981479486/KFToast.git', :tag => "1.0.1" }
+  s.source   = { :git => 'https://github.com/jh981479486/KFToast.git', :tag => "1.0.2" }
   s.platform = :ios 
   s.source_files = 'KFToast/*'
   s.framework = 'UIKit'
